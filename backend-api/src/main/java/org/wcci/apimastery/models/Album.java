@@ -17,4 +17,30 @@ public class Album {
     @ManyToOne
     private Artist artist;
 
+    public Album() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getImageLink() {
+        return imageLink;
+    }
+
+    public String getLabel() {
+        return label;
+    }
+
+    public Collection<Song> getSongs() {
+        return songs;
+    }
+
+    public Artist getArtist() {
+        return artist;
+    }
 }

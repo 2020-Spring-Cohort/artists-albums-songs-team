@@ -16,4 +16,22 @@ public class Song {
     private Artist artist;
     private String length;
 
+    public Song() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public Artist getArtist() {
+        return artist;
+    }
+
+    public String getLength() {
+        return length;
+    }
 }

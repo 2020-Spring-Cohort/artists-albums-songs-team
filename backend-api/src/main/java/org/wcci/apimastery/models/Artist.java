@@ -23,4 +23,38 @@ public class Artist {
     @OneToMany(mappedBy = "artist")
     private Collection<Song> songs;
 
+    public Artist() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public String getImageLink() {
+        return imageLink;
+    }
+
+    public String getLabel() {
+        return label;
+    }
+
+    public String getNumberOfBlackShirts() {
+        return numberOfBlackShirts;
+    }
+
+    public Collection<Album> getAlbums() {
+        return albums;
+    }
+
+    public Collection<Song> getSongs() {
+        return songs;
+    }
 }
