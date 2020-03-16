@@ -11,16 +11,16 @@ public interface SongRepository extends CrudRepository<Song, Long> {
     
     Optional<Song> findByTitle(String title);
     
-    Optional<Song> findSongsByArtist(Artist artist);
+    Iterable<Song> findSongsByArtist(Artist artist);
     
-    Optional<Song> findSongsByArtistName(String name);
+    Iterable<Song> findSongsByArtistName(String name);
     
-    Optional<Song> findSongsByArtistLabel(String label);
+    Iterable<Song> findSongsByArtistLabel(String label);
     
-    Optional<Song> findSongsByAlbum(Album album);
+    Iterable<Song> findSongsByAlbum(Album album);
     
-    Optional<Song> findSongsByAlbumTitle(String title);
+    Iterable<Song> findSongsByAlbumTitle(String title);
     
-    Optional<Song> findSongsByArtistNumberOfBlackShirts(String blackShirts);
+    Iterable<Song> findSongsByArtistNumberOfBlackShirts(String blackShirts);
     
 }
