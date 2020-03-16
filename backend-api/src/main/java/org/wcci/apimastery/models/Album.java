@@ -17,6 +17,10 @@ public class Album {
     @ManyToOne
     private Artist artist;
 
+    public void Album(String title, Artist artist){
+        this.title = title;
+        this.artist = artist;
+    }
     public Album() {
     }
 
