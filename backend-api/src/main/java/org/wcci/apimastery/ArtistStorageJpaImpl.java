@@ -6,6 +6,7 @@ import org.wcci.apimastery.Storage.ArtistStorage;
 import org.wcci.apimastery.models.Artist;
 
 import java.util.Collection;
+import java.util.Optional;
 
 @Service
 public class ArtistStorageJpaImpl implements ArtistStorage {
@@ -28,7 +29,7 @@ public class ArtistStorageJpaImpl implements ArtistStorage {
     }
 
     @Override
-    public Artist findArtistById(Long id) {
-        return artistRepo.findById(id).get();
+    public Optional<Artist> findArtistById(Long id) {
+        return artistRepo.findById(id);
     }
 }
