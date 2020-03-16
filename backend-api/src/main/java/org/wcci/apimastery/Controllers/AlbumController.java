@@ -8,6 +8,7 @@ import org.wcci.apimastery.models.Album;
 import java.util.Collection;
 
 @RestController
+@RequestMapping("/albums")
 public class AlbumController {
 
     private AlbumRepository albumRepository;
