@@ -8,6 +8,6 @@ import java.util.Optional;
 
 @Repository
 public interface ArtistRepository extends CrudRepository<Artist,Long> {
-    Optional<Artist> findCategoryById(Long id);
+    Optional<Artist> findArtistById(Long id);
 
 }
