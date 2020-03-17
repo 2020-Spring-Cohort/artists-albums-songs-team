@@ -12,6 +12,7 @@ import org.wcci.apimastery.models.Artist;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+
 @DataJpaTest
 public class JPAWiringTest {
     @Autowired
@@ -24,7 +25,7 @@ public class JPAWiringTest {
     private TestEntityManager entityManager;
 
     @Test
-    public void albumsShouldHaveAnArtist(){
+    public void albumsShouldHaveAnArtist() {
         Artist testArtist = new Artist("The Testers");
         artistRepository.save(testArtist);
 
