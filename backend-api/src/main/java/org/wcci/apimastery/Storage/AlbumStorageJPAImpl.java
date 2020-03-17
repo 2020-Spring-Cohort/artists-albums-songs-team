@@ -25,7 +25,22 @@ public Optional<Album> findAlbumById(Long id){
     return albumRepository.findById(id);
 }
 
-@Override
+    @Override
+    public Optional<Album> findByAlbumTitle(String title) {
+        return albumRepository.findByTitle(title);
+    }
+
+    @Override
+    public Optional<Album> findByAlbumLabel(String label) {
+        return albumRepository.findByLabel(label);
+    }
+
+    @Override
+    public Optional<Album> findAlbumByArtistName(String artistName) {
+        return albumRepository.findByArtistName(artistName);
+    }
+
+    @Override
 public void store(Album albumToStore){
     albumRepository.save(albumToStore);
 }
