@@ -23,6 +23,9 @@ public class Artist {
     @OneToMany(mappedBy = "artist")
     private Collection<Song> songs;
 
+    public Artist(String name){
+        this.name = name;
+    }
     public Artist() {
     }
 

@@ -1,3 +1,5 @@
+package org.wcci.apimastery.Storage;
+
 import java.util.Collection;
 import org.wcci.apimastery.models.Album;
 import org.springframework.stereotype.Service;
