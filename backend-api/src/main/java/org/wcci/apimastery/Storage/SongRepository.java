@@ -21,6 +21,4 @@ public interface SongRepository extends CrudRepository<Song, Long> {
     
     Iterable<Song> findSongsByAlbumTitle(String title);
     
-    Iterable<Song> findSongsByArtistNumberOfBlackShirts(String blackShirts);
-    
 }
