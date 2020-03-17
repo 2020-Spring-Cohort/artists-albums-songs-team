@@ -8,6 +8,14 @@ import java.util.Optional;
 
 public interface ArtistStorage {
     Collection<Artist> findAllArtists();
+    
     void store(Artist artists);
+    
     Optional<Artist> findArtistById(Long id);
+    
+    Optional<Artist> findArtistByName(String name);
+    
+    Optional<Artist> findArtistByAge(int age);
+    
+    Optional<Artist> findArtistByLabel(String label);
 }

@@ -17,7 +17,6 @@ public class Artist {
     private int age;
     private String imageLink;
     private String label;
-    private String numberOfBlackShirts;
     @OneToMany(mappedBy = "artist")
     private Collection<Album> albums;
     @OneToMany(mappedBy = "artist")
@@ -47,10 +46,6 @@ public class Artist {
 
     public String getLabel() {
         return label;
-    }
-
-    public String getNumberOfBlackShirts() {
-        return numberOfBlackShirts;
     }
 
     public Collection<Album> getAlbums() {

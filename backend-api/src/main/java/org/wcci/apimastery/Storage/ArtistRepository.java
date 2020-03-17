@@ -7,7 +7,10 @@ import org.wcci.apimastery.models.Artist;
 import java.util.Optional;
 
 @Repository
-public interface ArtistRepository extends CrudRepository<Artist,Long> {
-    Optional<Artist> findArtistById(Long id);
-
+public interface ArtistRepository extends CrudRepository<Artist, Long> {
+    Optional<Artist> findByName(String name);
+    
+    Optional<Artist> findByLabel(String label);
+    
+    Optional<Artist> findByAge(int age);
 }

@@ -1,8 +1,6 @@
-package org.wcci.apimastery;
+package org.wcci.apimastery.Storage;
 
 import org.springframework.stereotype.Service;
-import org.wcci.apimastery.Storage.ArtistRepository;
-import org.wcci.apimastery.Storage.ArtistStorage;
 import org.wcci.apimastery.models.Artist;
 
 import java.util.Collection;
@@ -22,14 +20,29 @@ public class ArtistStorageJpaImpl implements ArtistStorage {
     public Collection<Artist> findAllArtists() {
         return (Collection<Artist>) artistRepo.findAll();
     }
-
+    
     @Override
     public void store(Artist artists) {
         artistRepo.save(artists);
     }
-
+    
     @Override
     public Optional<Artist> findArtistById(Long id) {
         return artistRepo.findById(id);
+    }
+    
+    @Override
+    public Optional<Artist> findArtistByName(String name) {
+        return artistRepo.findByName(name);
+    }
+    
+    @Override
+    public Optional<Artist> findArtistByAge(int age) {
+        return artistRepo.findByAge(age);
+    }
+    
+    @Override
+    public Optional<Artist> findArtistByLabel(String label) {
+        return artistRepo.findByLabel(label);
     }
 }
