@@ -1,6 +1,9 @@
 package org.wcci.apimastery.models;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Song {
@@ -14,18 +17,40 @@ public class Song {
     private String length;
     @ManyToOne
     private Album album;
-
-    public Song() {
+    
+    protected Song() {
     }
-
+    
+    public Song(String title) {
+        this.title = title;
+    }
+    
+    public Song(String title, Artist artist) {
+        this.title = title;
+        this.artist = artist;
+    }
+    
+    public Song(String title, Artist artist, Album album) {
+        this.title = title;
+        this.artist = artist;
+        this.album = album;
+    }
+    
+    public Song(String title, Artist artist, Album album, String length) {
+        this.title = title;
+        this.artist = artist;
+        this.album = album;
+        this.length = length;
+    }
+    
     public Long getId() {
         return id;
     }
-
+    
     public String getTitle() {
         return title;
     }
-
+    
     public Artist getArtist() {
         return artist;
     }
