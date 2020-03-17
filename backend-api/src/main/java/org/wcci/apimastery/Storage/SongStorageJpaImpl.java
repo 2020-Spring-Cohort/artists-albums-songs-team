@@ -47,7 +47,7 @@ public class SongStorageJpaImpl implements SongStorage {
     }
     
     @Override
-    public Iterable<Song> findByBlackShirts(String blackShirts) {
-        return repository.findSongsByArtistNumberOfBlackShirts(blackShirts);
+    public Iterable<Song> findAllSongs() {
+        return repository.findAll();
     }
 }
