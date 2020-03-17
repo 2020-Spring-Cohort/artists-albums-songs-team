@@ -1,6 +1,8 @@
 package org.wcci.apimastery.Storage;
 
 import java.util.Collection;
+import java.util.Optional;
+
 import org.wcci.apimastery.models.Album;
 import org.springframework.stereotype.Service;
 
@@ -19,8 +21,8 @@ public Collection<Album> findAllAlbums(){
 }
 
 @Override
-public Album findAlbumById(Long id){
-    return albumRepository.findById(id).get();
+public Optional<Album> findAlbumById(Long id){
+    return albumRepository.findById(id);
 }
 
 @Override
