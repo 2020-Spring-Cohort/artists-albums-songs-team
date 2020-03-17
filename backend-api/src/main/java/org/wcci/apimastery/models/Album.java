@@ -1,6 +1,8 @@
 package org.wcci.apimastery.models;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 
 @Entity
@@ -17,12 +19,33 @@ public class Album {
     @ManyToOne
     private Artist artist;
 
-    public void Album(String title, Artist artist){
+    public Album(String title, Artist artist){
         this.title = title;
         this.artist = artist;
     }
     public Album() {
     }
+
+    public Album(String title, Artist artist,String label, String imageLink){
+        this.title = title;
+        this.artist = artist;
+        this.label = label;
+        this.imageLink = imageLink;
+    }
+
+    public Album(String title, Artist artist, String imageLink){
+        this.title = title;
+        this.artist = artist;
+        this.imageLink = imageLink;
+    }
+
+    public Album(String title, Artist artist, Song... songs) {
+        this.title = title;
+        this.artist = artist;
+        this.songs = new ArrayList<>(Arrays.asList(songs));
+    }
+
+
 
     public Long getId() {
         return id;
