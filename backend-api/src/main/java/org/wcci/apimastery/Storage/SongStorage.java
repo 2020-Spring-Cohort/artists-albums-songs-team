@@ -20,6 +20,6 @@ public interface SongStorage {
     
     Iterable<Song> findAllyByAlbumTitle(String title);
     
-    Iterable<Song> findByBlackShirts(String blackShirts);
+    Iterable<Song> findAllSongs();
     
 }
