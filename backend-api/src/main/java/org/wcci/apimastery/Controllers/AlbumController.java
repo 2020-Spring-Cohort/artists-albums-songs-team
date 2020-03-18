@@ -49,7 +49,7 @@ public class AlbumController {
     /*
     @GetMapping("{songTitle}")
     public Album showAlbumBySongTitle(@PathVariable String songTitle){
-    Not sure how to do this yet
+    return songStorage.findSongByTitle(title).get().getAlbum();
     }
      */
 }
