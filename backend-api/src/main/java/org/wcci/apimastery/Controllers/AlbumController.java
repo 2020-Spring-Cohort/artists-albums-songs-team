@@ -46,7 +46,6 @@ public class AlbumController {
         return retrievedAlbum.orElse(null);
     }
 
-    /*
     @GetMapping("{songTitle}")
     public Album showAlbumBySongTitle(@PathVariable String songTitle){
     return songStorage.findSongByTitle(title).get().getAlbum();
