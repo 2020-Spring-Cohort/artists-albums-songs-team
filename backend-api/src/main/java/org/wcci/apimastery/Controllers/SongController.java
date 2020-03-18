@@ -60,30 +60,41 @@ public class SongController {
     
     @PutMapping("/{id}")
     public Song putSong(@PathVariable Long id, @RequestBody Song song) {
-        
+    
         Optional<Song> songOptional = songStorage.findSongById(id);
-        
+    
         if (songOptional.isPresent()) {
             return songStorage.save(song);
         }
         return null;
     }
     
-    @PatchMapping("/{id}")
-    public Song patchSong(@PathVariable Long id, @RequestBody Song song) {
+    @PatchMapping("/{id}/comment")
+    public Song patchSong(@PathVariable Long id, @RequestBody String comment) {
         
         Optional<Song> songOptional = songStorage.findSongById(id);
         
         if (songOptional.isPresent()) {
             Song oldSong = songOptional.get();
             
-            oldSong.setTitle(song.getTitle());
+            oldSong.getComments().add(comment);
             
-            oldSong.setAlbum(song.getAlbum());
+            return songStorage.save(oldSong);
+        }
+        return null;
+    }
+    
+    @PatchMapping("/{id}/rating")
+    public Song patchSong(@PathVariable Long id, @RequestBody int rating) {
+        
+        Optional<Song> songOptional = songStorage.findSongById(id);
+        
+        if (songOptional.isPresent()) {
+            Song oldSong = songOptional.get();
             
-            oldSong.setArtist(song.getArtist());
+            oldSong.getRatings().add(rating);
             
-            return songStorage.save(song);
+            return songStorage.save(oldSong);
         }
         return null;
     }
