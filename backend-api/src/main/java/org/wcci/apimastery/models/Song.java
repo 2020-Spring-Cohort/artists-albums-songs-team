@@ -54,12 +54,28 @@ public class Song {
     public Artist getArtist() {
         return artist;
     }
-
+    
     public String getLength() {
         return length;
     }
-
-    public Album getAlbum(){
+    
+    public Album getAlbum() {
         return album;
+    }
+    
+    public void setTitle(String title) {
+        this.title = title;
+    }
+    
+    public void setArtist(Artist artist) {
+        this.artist = artist;
+    }
+    
+    public void setLength(String length) {
+        this.length = length;
+    }
+    
+    public void setAlbum(Album album) {
+        this.album = album;
     }
 }
