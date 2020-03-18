@@ -45,4 +45,11 @@ public class AlbumController {
 
         return retrievedAlbum.orElse(null);
     }
+
+    /*
+    @GetMapping("{songTitle}")
+    public Album showAlbumBySongTitle(@PathVariable String songTitle){
+    Not sure how to do this yet
+    }
+     */
 }
