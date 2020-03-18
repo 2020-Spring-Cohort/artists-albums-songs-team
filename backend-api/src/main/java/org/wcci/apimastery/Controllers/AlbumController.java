@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.wcci.apimastery.Storage.AlbumStorage;
+import org.wcci.apimastery.Storage.SongStorage;
 import org.wcci.apimastery.models.Album;
 
 import java.util.Collection;
@@ -15,9 +16,11 @@ import java.util.Optional;
 public class AlbumController {
 
     private AlbumStorage albumStorage;
+    private SongStorage songStorage;
 
-    public AlbumController(AlbumStorage albumStorage) {
+    public AlbumController(AlbumStorage albumStorage, SongStorage songStorage) {
         this.albumStorage = albumStorage;
+        this.songStorage = songStorage;
     }
 
     @GetMapping
@@ -46,8 +49,8 @@ public class AlbumController {
         return retrievedAlbum.orElse(null);
     }
 
-    @GetMapping("{songTitle}")
-    public Album showAlbumBySongTitle(@PathVariable String songTitle){
+    @GetMapping("{title}")
+    public Album showAlbumBySongTitle(@PathVariable String title){
     return songStorage.findSongByTitle(title).get().getAlbum();
     }
 }
