@@ -18,8 +18,9 @@ public class AlbumController {
     private AlbumStorage albumStorage;
     private SongStorage songStorage;
 
-    public AlbumController(AlbumStorage albumStorage) {
+    public AlbumController(AlbumStorage albumStorage, SongStorage songStorage) {
         this.albumStorage = albumStorage;
+        this.songStorage = songStorage;
     }
 
     @GetMapping
