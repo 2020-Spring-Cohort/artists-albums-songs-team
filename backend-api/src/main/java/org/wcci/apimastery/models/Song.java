@@ -1,13 +1,13 @@
 package org.wcci.apimastery.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 @Entity
 public class Song {
-
+    
     @Id
     @GeneratedValue
     private Long id;
@@ -17,6 +17,10 @@ public class Song {
     private String length;
     @ManyToOne
     private Album album;
+    @ElementCollection
+    private List<String> comments;
+    @ElementCollection
+    private List<Integer> ratings;
     
     protected Song() {
     }
@@ -43,6 +47,21 @@ public class Song {
         this.length = length;
     }
     
+    public Song(Artist artist, String length, Album album, String... comments) {
+        this.artist = artist;
+        this.length = length;
+        this.album = album;
+        this.comments = new ArrayList<>(Arrays.asList(comments));
+    }
+    
+    public Song(String title, Artist artist, String length, Album album, Integer... ratings) {
+        this.title = title;
+        this.artist = artist;
+        this.length = length;
+        this.album = album;
+        this.ratings = new ArrayList<>(Arrays.asList(ratings));
+    }
+    
     public Long getId() {
         return id;
     }
@@ -54,12 +73,36 @@ public class Song {
     public Artist getArtist() {
         return artist;
     }
-
+    
     public String getLength() {
         return length;
     }
-
-    public Album getAlbum(){
+    
+    public Album getAlbum() {
         return album;
+    }
+    
+    public void setTitle(String title) {
+        this.title = title;
+    }
+    
+    public void setArtist(Artist artist) {
+        this.artist = artist;
+    }
+    
+    public void setLength(String length) {
+        this.length = length;
+    }
+    
+    public void setAlbum(Album album) {
+        this.album = album;
+    }
+    
+    public List<String> getComments() {
+        return comments;
+    }
+    
+    public List<Integer> getRatings() {
+        return ratings;
     }
 }

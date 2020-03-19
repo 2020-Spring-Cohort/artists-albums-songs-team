@@ -17,6 +17,11 @@ public class SongStorageJpaImpl implements SongStorage {
     }
     
     @Override
+    public Optional<Song> findSongById(Long id) {
+        return repository.findById(id);
+    }
+    
+    @Override
     public Optional<Song> findSongByTitle(String title) {
         return repository.findByTitle(title);
     }
@@ -49,5 +54,15 @@ public class SongStorageJpaImpl implements SongStorage {
     @Override
     public Iterable<Song> findAllSongs() {
         return repository.findAll();
+    }
+    
+    @Override
+    public void remove(Song song) {
+        repository.delete(song);
+    }
+    
+    @Override
+    public Song save(Song song) {
+        return repository.save(song);
     }
 }
