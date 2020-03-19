@@ -1,5 +1,7 @@
 package org.wcci.apimastery.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -15,8 +17,10 @@ public class Album {
     private String imageLink;
     private String label;
     @OneToMany
+    @JsonBackReference
     private Collection<Song> songs;
     @ManyToOne
+    @JsonBackReference
     private Artist artist;
 
     public Album(String title, Artist artist){

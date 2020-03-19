@@ -1,6 +1,8 @@
 package org.wcci.apimastery.models;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -18,8 +20,10 @@ public class Artist {
     private String imageLink;
     private String label;
     @OneToMany(mappedBy = "artist")
+    @JsonBackReference
     private Collection<Album> albums;
     @OneToMany(mappedBy = "artist")
+    @JsonBackReference
     private Collection<Song> songs;
 
     public Artist(String name){
