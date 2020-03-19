@@ -37,14 +37,14 @@ public class SongController {
         return retrievedSong.orElse(null);
     }
     
-    @GetMapping("/{artistName}")
+    @GetMapping("/artist/{artistName}")
     public Collection<Song> showSongsByArtistName(@PathVariable String artistName) {
         Optional<Artist> retrievedArtist = artistStorage.findArtistByName(artistName);
     
         return retrievedArtist.map(Artist::getSongs).orElse(null);
     }
     
-    @GetMapping("/{albumName}")
+    @GetMapping("/album/{albumName}")
     public Collection<Song> showSongsByAlbumName(@PathVariable String albumName) {
         Optional<Album> retrievedAlbum = albumStorage.findByAlbumTitle(albumName);
         
@@ -85,14 +85,14 @@ public class SongController {
     }
     
     @PatchMapping("/{id}/rating")
-    public Song patchSong(@PathVariable Long id, @RequestBody int rating) {
+    public Song patchSongRating(@PathVariable Long id, @RequestBody String rating) {
         
         Optional<Song> songOptional = songStorage.findSongById(id);
         
         if (songOptional.isPresent()) {
             Song oldSong = songOptional.get();
             
-            oldSong.getRatings().add(rating);
+            oldSong.getRatings().add(Integer.parseInt(rating));
             
             return songStorage.store(oldSong);
         }
