@@ -32,28 +32,28 @@ public class AlbumController {
     @GetMapping("/{title}")
     public Album showAlbumByTitle(@PathVariable String title){
         Optional<Album> retrievedAlbum = albumStorage.findByAlbumTitle(title);
-
+    
         return retrievedAlbum.orElse(null);
     }
-
-    @GetMapping("/{albumArtist}")
-    public Album showAlbumByArtist(@PathVariable String albumArtist){
+    
+    @GetMapping("/artist/{albumArtist}")
+    public Album showAlbumByArtist(@PathVariable String albumArtist) {
         Optional<Album> retrievedAlbum = albumStorage.findAlbumByArtistName(albumArtist);
-
+        
         return retrievedAlbum.orElse(null);
     }
-
-    @GetMapping("/{albumLabel}")
-    public Album showAlbumBySong(@PathVariable String albumLabel){
+    
+    @GetMapping("/label/{albumLabel}")
+    public Album showAlbumByLabel(@PathVariable String albumLabel) {
         Optional<Album> retrievedAlbum = albumStorage.findByAlbumLabel(albumLabel);
-
+        
         return retrievedAlbum.orElse(null);
     }
-
-    @GetMapping("/{songTitle}")
-    public Album showAlbumBySongTitle(@PathVariable String songTitle){
+    
+    @GetMapping("/song/{songTitle}")
+    public Album showAlbumBySongTitle(@PathVariable String songTitle) {
         Optional<Song> retrievedSong = songStorage.findSongByTitle(songTitle);
-
+        
         return retrievedSong.map(Song::getAlbum).orElse(null);
     }
 }

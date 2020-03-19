@@ -32,7 +32,7 @@ public class ArtistController {
         return retrievedArtist.orElse(null);
     }
 
-    @GetMapping("/{artistLabel}")
+    @GetMapping("/label/{artistLabel}")
     public Artist showArtistByLabel(@PathVariable String artistLabel){
         Optional<Artist> retrievedArtist = artistStorage.findArtistByLabel(artistLabel);
 
