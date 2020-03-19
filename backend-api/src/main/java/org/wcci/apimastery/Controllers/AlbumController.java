@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.wcci.apimastery.Storage.AlbumStorage;
 import org.wcci.apimastery.Storage.SongStorage;
 import org.wcci.apimastery.models.Album;
+import org.wcci.apimastery.models.Song;
 
 import java.util.Collection;
 import java.util.Optional;
@@ -49,8 +50,10 @@ public class AlbumController {
         return retrievedAlbum.orElse(null);
     }
 
-    @GetMapping("{title}")
-    public Album showAlbumBySongTitle(@PathVariable String title){
-    return songStorage.findSongByTitle(title).get().getAlbum();
+    @GetMapping("/{songTitle}")
+    public Album showAlbumBySongTitle(@PathVariable String songTitle){
+        Optional<Song> retrievedSong = songStorage.findSongByTitle(songTitle);
+
+        return retrievedSong.map(Song::getAlbum).orElse(null);
     }
 }

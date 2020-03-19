@@ -62,7 +62,7 @@ public class SongStorageJpaImpl implements SongStorage {
     }
     
     @Override
-    public Song save(Song song) {
+    public Song store(Song song) {
         return repository.save(song);
     }
 }

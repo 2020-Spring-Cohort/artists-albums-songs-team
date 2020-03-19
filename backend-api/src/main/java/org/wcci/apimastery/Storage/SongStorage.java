@@ -26,6 +26,6 @@ public interface SongStorage {
     
     void remove(Song song);
     
-    Song save(Song song);
+    Song store(Song song);
     
 }

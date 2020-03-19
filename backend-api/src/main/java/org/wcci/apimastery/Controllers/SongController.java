@@ -64,7 +64,7 @@ public class SongController {
         Optional<Song> songOptional = songStorage.findSongById(id);
     
         if (songOptional.isPresent()) {
-            return songStorage.save(song);
+            return songStorage.store(song);
         }
         return null;
     }
@@ -79,7 +79,7 @@ public class SongController {
             
             oldSong.getComments().add(comment);
             
-            return songStorage.save(oldSong);
+            return songStorage.store(oldSong);
         }
         return null;
     }
@@ -94,7 +94,7 @@ public class SongController {
             
             oldSong.getRatings().add(rating);
             
-            return songStorage.save(oldSong);
+            return songStorage.store(oldSong);
         }
         return null;
     }
