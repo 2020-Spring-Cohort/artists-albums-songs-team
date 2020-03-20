@@ -39,8 +39,8 @@ import{
         const newDescription = document.querySelector('.form__description');
     
         const newArtistJson = {
-            "name": newArtist.value,
-            "description": newArtist.value
+            "name": newName,
+            "description": newDescription
         }
 
         fetch("http://localhost:8080/artists/", {
