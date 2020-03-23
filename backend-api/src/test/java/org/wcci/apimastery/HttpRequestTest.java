@@ -19,9 +19,23 @@ public class HttpRequestTest {
     private TestRestTemplate testRestTemplate;
 
     @Test
-    public void artistsEndPointReturnsOk(){
+    public void artistsEndPointReturnsOk() {
         ResponseEntity<String> response = testRestTemplate.getForEntity(
                 "http://localhost:" + port + "/artists", String.class);
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
+    }
+
+    @Test
+    public void albumsEndPointReturnsOk() {
+        ResponseEntity<String> response = testRestTemplate.getForEntity(
+                "http://localhost:" + port + "/albums", String.class);
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
+    }
+
+    @Test
+    public void songsEndPointReturnsOk() {
+        ResponseEntity<String> response = testRestTemplate.getForEntity(
+                "http://localhost:" + port + "/songs", String.class);
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
     }
 }
