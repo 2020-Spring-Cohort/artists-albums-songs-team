@@ -1,23 +1,16 @@
-import {DomMaker} from './DomMaker.js'
-import {createNewArtistForm} from './NewArtistForm.js'
+import { ArtistCreator } from './artistCreator.js';
 
-const artistPic = document.querySelector('.artistPic');
+const artistBody = document.querySelector('.body');
 
-const displayArtists = (artists) => {
-    artistPic.innerHTML = '';
-    let artistList = new DomMaker('ul')
-        .changeContent('List of artists:');
-    artists.forEach((artist) => {
-        artistList.appendChild(new DomMaker('li')
-            .changeContent(artist.imageLink)
-            .render())
-    });
-
-    anchorElement.append(artistList.render());
-    anchorElement.append(createNewArtistForm());
+const displayArtist = (artist) => {
+    artistBody.appendChild(new ArtistCreator()
+    .setName(artist.name)
+    .setImage(artist.image)
+    .setAlbums(artist.albums)
+    .setAge(artist.age)
+    .setLabel(artist.label).render());
 }
 
-
 export {
-    displayArtists
+    displayArtist
 }

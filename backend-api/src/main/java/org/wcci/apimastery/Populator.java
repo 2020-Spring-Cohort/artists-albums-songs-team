@@ -24,22 +24,22 @@ public class Populator implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        Artist meshuggah = new Artist("Meshuggah");
+        Artist meshuggah = new Artist("Meshuggah", 1987, "this is going to be a link maybe", "Nuclear Blast");
         artistStorage.store(meshuggah);
 
-        Artist polythia = new Artist("Polythia");
-        artistStorage.store(polythia);
+        Artist polyphia = new Artist("Polyphia", 2010, "imageLink", "Headphone Music");
+        artistStorage.store(polyphia);
 
-        Artist vomitTheSoul = new Artist("Vomit The Soul");
+        Artist vomitTheSoul = new Artist("Vomit The Soul", 2000, "imageLink", "Unique Leader Records");
         artistStorage.store(vomitTheSoul);
 
-        Artist morbidAngel = new Artist("Morbid Angel");
+        Artist morbidAngel = new Artist("Morbid Angel", 1983, "imageLink", "Earache Records");
         artistStorage.store(morbidAngel);
 
         Album obZen = new Album("obZen", meshuggah);
         albumStorage.store(obZen);
 
-        Album newLevelsNewDevils = new Album("New Levels New Devils", polythia);
+        Album newLevelsNewDevils = new Album("New Levels New Devils", polyphia);
         albumStorage.store(newLevelsNewDevils);
 
         Album apostlesOfInexpression = new Album("Apostles of Inexpression", vomitTheSoul);
@@ -51,7 +51,7 @@ public class Populator implements CommandLineRunner {
         Song bleed= new Song("Bleed", meshuggah, obZen);
         songStorage.store(bleed);
 
-        Song goat = new Song("G.O.A.T.", polythia, newLevelsNewDevils);
+        Song goat = new Song("G.O.A.T.", polyphia, newLevelsNewDevils);
         songStorage.store(goat);
 
         Song selfPerceptionVeil = new Song("Self Perception Veil", vomitTheSoul, apostlesOfInexpression);
