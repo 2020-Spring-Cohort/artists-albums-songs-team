@@ -1,8 +1,8 @@
 import {displaySong} from './songPage.js'
 
-const getSong = (id) => {
+const getSong = (name) => {
 
-    fetch("http://localhost:8080/songs/" + id)
+    fetch("http://localhost:8080/songs/" + name)
         .then(res => {
             const bodyElement = document.querySelector('.body');
             while (bodyElement.firstChild) {

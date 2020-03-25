@@ -4,7 +4,7 @@ import{
     import{
         InputMaker
     } from './InputMaker.js'
-    import{getAllArtists} from './artistbuilder.js'
+    import{getAllArtists} from './artistFetcher.js'
     
     const createNewArtistForm= ()=>{
         const form = new DomMaker('form')
