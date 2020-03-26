@@ -1,10 +1,15 @@
-html{
+html {
     background-image: radial-gradient(circle, black, rgb(107, 0, 0));
     height: 100vh;
     width: 100vw;
     margin: 0;
+    font-size: 1.5rem;
     padding: 0;
     color: white;
+}
+
+h3 {
+    font-size: 1.7rem;
 }
 
 header {
@@ -23,7 +28,11 @@ img {
 
 .body {
     font-family: 'Creepster', cursive;
+    text-align: center;
+}
 
+.artist {
+    border: medium solid black;
 }
 
 

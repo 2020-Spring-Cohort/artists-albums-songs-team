@@ -3,6 +3,7 @@ class AlbumCreator {
     constructor() {
         this._container = document.createElement('div');
         this._title = document.createElement('h3');
+        this._image = document.createElement('img');
         this._label = document.createElement('h4');
         this._songs = document.createElement('ul');
     }
@@ -25,8 +26,14 @@ class AlbumCreator {
         return this;
     }
 
-    addSong(song) {
-        song.forEach(song => {
+    setImage(image) {
+        this._image.setAttribute('src', image);
+        this._image.setAttribute('alt', image);
+        return this;
+    }
+
+    addSong(songs) {
+        songs.forEach(song => {
             let newElement = document.createElement('li');
             newElement.innerText = song.title;
             this._songs.appendChild(newElement);

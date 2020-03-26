@@ -1,6 +1,7 @@
 package org.wcci.apimastery.models;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import javax.persistence.*;
@@ -18,9 +19,10 @@ public class Album {
     private String title;
     private String imageLink;
     private String label;
-    @OneToMany
+    @OneToMany(mappedBy = "album")
     private Collection<Song> songs;
     @ManyToOne
+    @JsonIgnore
     private Artist artist;
 
     public Album(String title, Artist artist){

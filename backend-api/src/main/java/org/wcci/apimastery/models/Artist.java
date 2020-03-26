@@ -23,8 +23,6 @@ public class Artist {
     private String label;
     @OneToMany(mappedBy = "artist")
     private Collection<Album> albums;
-    @OneToMany(mappedBy = "artist")
-    private Collection<Song> songs;
 
     public Artist(String name){
         this.name = name;
@@ -56,14 +54,6 @@ public class Artist {
         this.albums = new ArrayList<>(Arrays.asList(albums));
     }
 
-    public Artist(String name, int age, String imageLink, String label, Song... songs) {
-        this.age = age;
-        this.imageLink = imageLink;
-        this.label = label;
-        this.name = name;
-        this.songs = new ArrayList<>(Arrays.asList(songs));
-    }
-
     public Artist() {
     }
 
@@ -89,9 +79,5 @@ public class Artist {
 
     public Collection<Album> getAlbums() {
         return albums;
-    }
-
-    public Collection<Song> getSongs() {
-        return songs;
     }
 }
