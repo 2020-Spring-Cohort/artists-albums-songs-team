@@ -29,12 +29,4 @@ public class WebLayerTest {
     @MockBean
     private ArtistStorage artistStorage;
 
-//    how do you write this test without technically having a model and view **ask Ben**
-//
-//    @Test
-//    public void artistsShouldReturnOK() throws Exception {
-//        mockMvc.perform(get("/artists"))
-//                .andDo(print())
-//                .andExpect(status().isOK())
-//    }
 }
