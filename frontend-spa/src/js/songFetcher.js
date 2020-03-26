@@ -12,7 +12,6 @@ const getSong = (name) => {
         })
         .then(res => res.json())
         .then(song => displaySong(song))
-        .then(() => alert('Bleed'))
         .catch(err => console.error(err))
 };
 
@@ -37,3 +36,5 @@ getSongs();
 getSong('Bleed');
 
 getSong('God of Emptiness');
+
+export {getSong, getSongs}
