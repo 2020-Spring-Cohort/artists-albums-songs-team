@@ -18,7 +18,7 @@ public class Album {
     private String title;
     private String imageLink;
     private String label;
-    @OneToMany
+    @OneToMany(mappedBy = "album")
     private Collection<Song> songs;
     @ManyToOne
     private Artist artist;

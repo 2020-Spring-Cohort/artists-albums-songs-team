@@ -36,7 +36,7 @@ public class Populator implements CommandLineRunner {
         Artist morbidAngel = new Artist("Morbid Angel", 1983, "https://metalinjection.net/wp-content/uploads/2019/09/11227053_10206596943498711_6732990489779844999_o.jpg", "Earache Records");
         artistStorage.store(morbidAngel);
     
-        Album obZen = new Album("obZen", meshuggah, "Nuclear Blast", null);
+        Album obZen = new Album("obZen", meshuggah, "Nuclear Blast", "https://i2.wp.com/ghostcultmag.com/wp-content/uploads/2018/03/Meshuggah-Obzen-banner-ghostcultmag.jpg?resize=584%2C365&ssl=1");
         albumStorage.store(obZen);
     
         Album newLevelsNewDevils = new Album("New Levels New Devils", polyphia, "Headphone Music", null);
@@ -48,8 +48,32 @@ public class Populator implements CommandLineRunner {
         Album covenant = new Album("Covenant", morbidAngel, "Earache Records", null);
         albumStorage.store(covenant);
     
+        Album domination = new Album("Domination", morbidAngel, "Earache Records", null);
+        albumStorage.store(domination);
+    
+        Album muse = new Album("Muse", polyphia, "Earache Records", null);
+        albumStorage.store(muse);
+    
+        Album renaissance = new Album("Renaissance", polyphia, "Earache Records", null);
+        albumStorage.store(renaissance);
+    
+        Album nothing = new Album("Nothing", meshuggah, "Earache Records", null);
+        albumStorage.store(nothing);
+    
         Song bleed = new Song("Bleed", meshuggah, obZen);
         songStorage.store(bleed);
+    
+        Song dominate = new Song("Dominate", morbidAngel, domination);
+        songStorage.store(dominate);
+    
+        Song finale = new Song("Finale", polyphia, muse);
+        songStorage.store(finale);
+    
+        Song cultureShock = new Song("Culture Shock", polyphia, renaissance);
+        songStorage.store(cultureShock);
+    
+        Song nebulous = new Song("Nebulous", meshuggah, nothing);
+        songStorage.store(nebulous);
     
         Song goat = new Song("G.O.A.T.", polyphia, newLevelsNewDevils);
         songStorage.store(goat);
@@ -68,9 +92,21 @@ public class Populator implements CommandLineRunner {
     
         covenant.addSong(godOfEmptiness);
     
+        domination.addSong(dominate);
+    
+        muse.addSong(finale);
+    
+        renaissance.addSong(cultureShock);
+    
+        nothing.addSong(nebulous);
+    
         albumStorage.store(obZen);
         albumStorage.store(newLevelsNewDevils);
         albumStorage.store(apostlesOfInexpression);
         albumStorage.store(covenant);
+        albumStorage.store(muse);
+        albumStorage.store(renaissance);
+        albumStorage.store(nothing);
+        albumStorage.store(domination);
     }
 }
