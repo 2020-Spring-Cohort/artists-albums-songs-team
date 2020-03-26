@@ -20,6 +20,18 @@ const addEventListener = (query, functionToRun) => {
     });
 };
 
+
+const renderHome = () => {
+    clearView();
+const home = document.querySelector(".body");
+home.innerText= "The greatest Death Metal API of all time!";
+const homeImage = document.createElement("img");
+homeImage.setAttribute("src", "https://cdn.discordapp.com/attachments/689164265831399453/692857994211360778/repairedskull.png");
+homeImage.setAttribute("alt", "Skull image");
+homeImage.id = "homeImage";
+home.append(homeImage);
+}
+
 addEventListener('.song h3', getSong);
 
 addEventListener('.artist h3', getArtist);
@@ -30,4 +42,4 @@ addEventListener('.albums', getAlbums);
 
 addEventListener('.artists', getAllArtists);
 
-addEventListener('.home', clearView);
+addEventListener('.home', renderHome);
