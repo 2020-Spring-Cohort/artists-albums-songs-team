@@ -6,6 +6,7 @@ const displayAlbum = (album) => {
     bodyElement.appendChild(new AlbumCreator()
         .setLabel(album.label)
         .setTitle(album.title)
+        .addSong(album.songs)
         .render());
 };
 

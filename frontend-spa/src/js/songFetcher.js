@@ -28,13 +28,6 @@ const getSongs = () => {
         .then(array => {
             array.forEach(displaySong);
         })
-        .then(() => alert('All songs'));
 };
-
-getSongs();
-
-getSong('Bleed');
-
-getSong('God of Emptiness');
 
 export {getSong, getSongs}

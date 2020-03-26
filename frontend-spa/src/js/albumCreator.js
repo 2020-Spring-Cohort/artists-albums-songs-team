@@ -26,9 +26,11 @@ class AlbumCreator {
     }
 
     addSong(song) {
-        let newElement = document.createElement('li');
-        newElement.innerText = song.title;
-        this._songs.appendChild(newElement);
+        song.forEach(song => {
+            let newElement = document.createElement('li');
+            newElement.innerText = song.title;
+            this._songs.appendChild(newElement);
+        });
         return this;
     }
 

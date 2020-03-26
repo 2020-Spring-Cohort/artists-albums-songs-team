@@ -1,6 +1,7 @@
 package org.wcci.apimastery.models;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -8,6 +9,7 @@ import java.util.Arrays;
 import java.util.List;
 
 @Entity
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "title")
 public class Song {
     
     @Id
@@ -15,11 +17,9 @@ public class Song {
     private Long id;
     private String title;
     @ManyToOne
-    @JsonManagedReference
     private Artist artist;
     private String length;
     @ManyToOne
-    @JsonManagedReference
     private Album album;
     @ElementCollection
     private List<String> comments;
