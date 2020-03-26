@@ -32,6 +32,10 @@ header{
     display: grid;
 }
 
+.album {
+    display: grid;
+}
+
 .body__artistEven {
     display: grid;
     grid-column-start: 3;
