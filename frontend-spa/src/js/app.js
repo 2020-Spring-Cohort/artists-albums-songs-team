@@ -26,7 +26,7 @@ const renderHome = () => {
 const home = document.querySelector(".body");
 home.innerText= "The greatest Death Metal API of all time!";
 const homeImage = document.createElement("img");
-homeImage.setAttribute("src", "https://i.ya-webdesign.com/images/skull-horns-png-3.png");
+homeImage.setAttribute("src", "https://cdn.discordapp.com/attachments/689164265831399453/692857994211360778/repairedskull.png");
 homeImage.setAttribute("alt", "Skull image");
 homeImage.id = "homeImage";
 home.append(homeImage);
@@ -43,4 +43,3 @@ addEventListener('.albums', getAlbums);
 addEventListener('.artists', getAllArtists);
 
 addEventListener('.home', renderHome);
-
