@@ -16,8 +16,6 @@ public class Song {
     @GeneratedValue
     private Long id;
     private String title;
-    @ManyToOne
-    private Artist artist;
     private String length;
     @ManyToOne
     private Album album;
@@ -33,34 +31,25 @@ public class Song {
         this.title = title;
     }
     
-    public Song(String title, Artist artist) {
+    public Song(String title, Album album) {
         this.title = title;
-        this.artist = artist;
-    }
-    
-    public Song(String title, Artist artist, Album album) {
-        this.title = title;
-        this.artist = artist;
         this.album = album;
     }
     
-    public Song(String title, Artist artist, Album album, String length) {
+    public Song(String title, Album album, String length) {
         this.title = title;
-        this.artist = artist;
         this.album = album;
         this.length = length;
     }
     
-    public Song(Artist artist, String length, Album album, String... comments) {
-        this.artist = artist;
+    public Song(String length, Album album, String... comments) {
         this.length = length;
         this.album = album;
         this.comments = new ArrayList<>(Arrays.asList(comments));
     }
     
-    public Song(String title, Artist artist, String length, Album album, Integer... ratings) {
+    public Song(String title, String length, Album album, Integer... ratings) {
         this.title = title;
-        this.artist = artist;
         this.length = length;
         this.album = album;
         this.ratings = new ArrayList<>(Arrays.asList(ratings));
@@ -74,9 +63,6 @@ public class Song {
         return title;
     }
     
-    public Artist getArtist() {
-        return artist;
-    }
     
     public String getLength() {
         return length;
@@ -90,9 +76,6 @@ public class Song {
         this.title = title;
     }
     
-    public void setArtist(Artist artist) {
-        this.artist = artist;
-    }
     
     public void setLength(String length) {
         this.length = length;

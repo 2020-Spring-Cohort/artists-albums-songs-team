@@ -60,28 +60,28 @@ public class Populator implements CommandLineRunner {
         Album nothing = new Album("Nothing", meshuggah, "Earache Records", null);
         albumStorage.store(nothing);
     
-        Song bleed = new Song("Bleed", meshuggah, obZen);
+        Song bleed = new Song("Bleed", obZen);
         songStorage.store(bleed);
     
-        Song dominate = new Song("Dominate", morbidAngel, domination);
+        Song dominate = new Song("Dominate", domination);
         songStorage.store(dominate);
     
-        Song finale = new Song("Finale", polyphia, muse);
+        Song finale = new Song("Finale", muse);
         songStorage.store(finale);
     
-        Song cultureShock = new Song("Culture Shock", polyphia, renaissance);
+        Song cultureShock = new Song("Culture Shock", renaissance);
         songStorage.store(cultureShock);
     
-        Song nebulous = new Song("Nebulous", meshuggah, nothing);
+        Song nebulous = new Song("Nebulous", nothing);
         songStorage.store(nebulous);
     
-        Song goat = new Song("G.O.A.T.", polyphia, newLevelsNewDevils);
+        Song goat = new Song("G.O.A.T.", newLevelsNewDevils);
         songStorage.store(goat);
     
-        Song selfPerceptionVeil = new Song("Self Perception Veil", vomitTheSoul, apostlesOfInexpression);
+        Song selfPerceptionVeil = new Song("Self Perception Veil", apostlesOfInexpression);
         songStorage.store(selfPerceptionVeil);
     
-        Song godOfEmptiness = new Song("God of Emptiness", morbidAngel, covenant);
+        Song godOfEmptiness = new Song("God of Emptiness", covenant);
         songStorage.store(godOfEmptiness);
     
         obZen.addSong(bleed);

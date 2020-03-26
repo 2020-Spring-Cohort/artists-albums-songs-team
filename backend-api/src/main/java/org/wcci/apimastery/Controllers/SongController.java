@@ -5,7 +5,6 @@ import org.wcci.apimastery.Storage.AlbumStorage;
 import org.wcci.apimastery.Storage.ArtistStorage;
 import org.wcci.apimastery.Storage.SongStorage;
 import org.wcci.apimastery.models.Album;
-import org.wcci.apimastery.models.Artist;
 import org.wcci.apimastery.models.Song;
 
 import java.util.Collection;
@@ -35,13 +34,6 @@ public class SongController {
         Optional<Song> retrievedSong = songStorage.findSongByTitle(title);
         
         return retrievedSong.orElse(null);
-    }
-    
-    @GetMapping("/artist/{artistName}")
-    public Collection<Song> showSongsByArtistName(@PathVariable String artistName) {
-        Optional<Artist> retrievedArtist = artistStorage.findArtistByName(artistName);
-    
-        return retrievedArtist.map(Artist::getSongs).orElse(null);
     }
     
     @GetMapping("/album/{albumName}")
