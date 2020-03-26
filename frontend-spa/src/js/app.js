@@ -20,6 +20,18 @@ const addEventListener = (query, functionToRun) => {
     });
 };
 
+
+const renderHome = () => {
+    clearView();
+const home = document.querySelector(".body");
+home.innerText= "The greatest Death Metal API of all time!";
+const homeImage = document.createElement("img");
+homeImage.setAttribute("src", "https://i.ya-webdesign.com/images/skull-horns-png-3.png");
+homeImage.setAttribute("alt", "Skull image");
+home.append(homeImage);
+homeImage.id = "homeImage";
+}
+
 addEventListener('.song h3', getSong);
 
 addEventListener('.artist h3', getArtist);
@@ -30,4 +42,6 @@ addEventListener('.albums', getAlbums);
 
 addEventListener('.artists', getAllArtists);
 
-addEventListener('.home', clearView);
+addEventListener('.home', renderHome);
+
+
