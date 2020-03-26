@@ -25,10 +25,7 @@ const getArtist = (name) => {
         })
         .then(response => response.json())
         .then(artist => displayArtist(artist))
-        .then(() => alert('Single Artist'))
         .catch(err => console.error(err))
 };
-
-getAllArtists();
 
 export {getAllArtists, getArtist}

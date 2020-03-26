@@ -1,17 +1,16 @@
 package org.wcci.apimastery.models;
 
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 
 @Entity
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "name")
 public class Artist {
 
     @Id
@@ -19,13 +18,12 @@ public class Artist {
     private Long id;
     private String name;
     private int age;
+    @Lob
     private String imageLink;
     private String label;
     @OneToMany(mappedBy = "artist")
-    @JsonBackReference
     private Collection<Album> albums;
     @OneToMany(mappedBy = "artist")
-    @JsonBackReference
     private Collection<Song> songs;
 
     public Artist(String name){

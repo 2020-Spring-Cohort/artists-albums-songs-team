@@ -14,6 +14,4 @@ const getAlbums = () => {
         .catch(err => console.error(err));
 };
 
-getAlbums();
-
 export {getAlbum, getAlbums}

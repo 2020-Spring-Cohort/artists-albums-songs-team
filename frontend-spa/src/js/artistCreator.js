@@ -4,7 +4,7 @@ class ArtistCreator{
         this._container = document.createElement("div");
         this._name = document.createElement("h3");
         this._image = document.createElement("img");
-        this._albums = document.createElement("p");
+        this._albums = document.createElement("ul");
         this._label = document.createElement("p");
         this._age = document.createElement("p");
     }
@@ -19,27 +19,32 @@ class ArtistCreator{
         return this._container;
     }
 
-    setName(name){
+    setName(name) {
         this._name.innerText = name;
         return this;
     }
 
-    setImage(image){
-        this._image.innerHTML = image;
+    setImage(image) {
+        this._image.setAttribute('src', image);
+        this._image.setAttribute('alt', image);
         return this;
     }
 
-    setAlbums(albums){
-        this._albums.innerText = albums;
+    setAlbums(albums) {
+        albums.forEach(album => {
+            let newListElem = document.createElement('li');
+            newListElem.innerText = album.title;
+            this._albums.appendChild(newListElem);
+        });
         return this;
     }
 
-    setLabel(label){
+    setLabel(label) {
         this._label.innerText = label;
         return this;
     }
 
-    setAge(age){
+    setAge(age) {
         this._age.innerText = age;
         return this;
     }

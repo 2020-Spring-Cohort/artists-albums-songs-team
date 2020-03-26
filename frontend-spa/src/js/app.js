@@ -14,12 +14,10 @@ const addEventListener = (query, functionToRun) => {
     document.querySelectorAll(query).forEach(element => {
         element.addEventListener('click', event => {
             event.preventDefault();
-            while (body.firstChild) {
-                body.removeChild(body.firstChild);
-            }
+            clearView();
             functionToRun(element.innerText);
-        })
-    })
+        });
+    });
 };
 
 addEventListener('.song h3', getSong);

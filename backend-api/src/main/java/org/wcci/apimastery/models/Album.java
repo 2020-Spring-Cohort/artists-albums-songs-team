@@ -1,6 +1,7 @@
 package org.wcci.apimastery.models;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -8,6 +9,7 @@ import java.util.Arrays;
 import java.util.Collection;
 
 @Entity
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "title")
 public class Album {
 
     @Id
@@ -17,10 +19,8 @@ public class Album {
     private String imageLink;
     private String label;
     @OneToMany
-    @JsonBackReference
     private Collection<Song> songs;
     @ManyToOne
-    @JsonBackReference
     private Artist artist;
 
     public Album(String title, Artist artist){
@@ -42,23 +42,28 @@ public class Album {
         this.artist = artist;
         this.imageLink = imageLink;
     }
-
+    
     public Album(String title, Artist artist, Song... songs) {
         this.title = title;
         this.artist = artist;
         this.songs = new ArrayList<>(Arrays.asList(songs));
     }
-
-
-
+    
+    public void addSong(Song... songs) {
+        if (this.songs == null) {
+            this.songs = new ArrayList<>();
+        }
+        getSongs().addAll(Arrays.asList(songs));
+    }
+    
     public Long getId() {
         return id;
     }
-
+    
     public String getTitle() {
         return title;
     }
-
+    
     public String getImageLink() {
         return imageLink;
     }
