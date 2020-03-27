@@ -27,7 +27,7 @@ public class Populator implements CommandLineRunner {
         Artist meshuggah = new Artist("Meshuggah", 1987, "https://www.nuclearblast.de/en/data/imagedata/band-header/meshuggah-bandheader.jpg?x=1110", "Nuclear Blast");
         artistStorage.store(meshuggah);
     
-        Artist polyphia = new Artist("Polyphia", 2010, "https://lh3.googleusercontent.com/proxy/Tcyb-GEAdOdDCE_7ymXTOrORTy3UXZTCrbPtdTzP9eyAlDIxiKrxAuzU3jSQ5fLvTfFXp5UcilyaPaPcvesfcN02vELHSRF0NaC-3xuJciny7xOdjSzMWpn_duDUGi5JVnIjUWD6HatQCgA3rfdwU2ZNfWzDXvbdNWpReyRa", "Headphone Music");
+        Artist polyphia = new Artist("Polyphia", 2010, "https://www.metalsucks.net/wp-content/uploads/2019/02/polyphia-2019-1000x512.jpg", "Headphone Music");
         artistStorage.store(polyphia);
     
         Artist vomitTheSoul = new Artist("Vomit The Soul", 2000, "https://www.metal-archives.com/images/1/3/6/8/13688_photo.jpg?4959", "Unique Leader Records");
