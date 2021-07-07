@@ -1,0 +1,56 @@
+.container{
+display: grid;
+grid-template-columns: 10% 40% 40% 10%;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    float: left;
+}
+
+.body{
+    display: grid;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    justify-content: center;
+}
+
+.body__artistOdd {
+    display: grid;
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+.song {
+    display: grid;
+}
+
+.album {
+    display: grid;
+}
+
+.body__artistEven {
+    display: grid;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-column-gap: 5px;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.artistPic{
+    display: flex;
+    justify-content: center;
+    background-color: hotpink;
+}
